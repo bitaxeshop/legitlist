@@ -1,12 +1,12 @@
-# Maintainers Guide
+# 🔧 Maintainers Guide
 
-Internal docs for the legitlist core team. Not vendor-facing.
+Internal reference for the legitlist core team. Not vendor-facing.
 
 ---
 
-## Architecture
+## 🏗️ How the system works
 
-When a PR merges into `main`, a GitHub Action syncs all active vendor data to the Framer CMS. The site updates automatically — no manual steps.
+When a PR merges into `main`, a GitHub Action syncs all active vendor data to the Framer CMS. The site updates automatically — no manual steps needed.
 
 ```
 PR merged → GitHub Action triggers → Vendor data synced to Framer → Site deploys
@@ -14,12 +14,12 @@ PR merged → GitHub Action triggers → Vendor data synced to Framer → Site d
 
 ---
 
-## Repo structure
+## 📁 Repo structure
 
 ```
 legitlist/
 ├── vendors/
-│   ├── _schema.json          # JSON Schema for vendor files
+│   ├── _schema.json          # JSON Schema — all vendor files must pass this
 │   ├── _example.json         # Template (active: false, skipped by sync)
 │   └── {slug}.json           # One file per vendor
 ├── logos/
@@ -36,34 +36,49 @@ legitlist/
     └── pull_request_template.md
 ```
 
-Files prefixed with `_` are internal — skipped by sync and validation.
+> Files prefixed with `_` are internal — skipped by both sync and validation.
 
 ---
 
-## First-time setup
+## ⚙️ First-time setup
 
-1. Add these secrets under **Settings → Secrets and variables → Actions**:
+**1. Add GitHub Secrets**
+
+Go to **Settings → Secrets and variables → Actions** and add:
 
 | Secret | Where to find it |
 |---|---|
 | `FRAMER_PROJECT_URL` | Framer → Project Settings → API |
 | `FRAMER_API_KEY` | Framer → Project Settings → API → Generate Key |
 
-2. Trigger the first sync manually: **Actions → Sync Vendors to Framer CMS → Run workflow**. This creates the Managed Collection in Framer.
+**2. Initialize the Framer Managed Collection**
+
+Trigger the first sync manually: **Actions → Sync Vendors to Framer CMS → Run workflow**
+
+This creates the Managed Collection in Framer with all fields. Only needs to be done once.
 
 ---
 
-## Removing a vendor
+## ➕ Adding or updating a vendor
 
-**Soft remove** — set `"active": false` in the JSON. File stays, vendor disappears from the site.
+1. Create `vendors/{slug}.json` — copy from `vendors/_example.json`
+2. Add logo at `logos/{slug}.png` (square, max 200 KB)
+3. Open a PR — CI validates automatically
+4. Merge → sync and deploy run automatically
+
+---
+
+## 🗑️ Removing a vendor
+
+**Soft remove** — set `"active": false` in the JSON. File stays in repo, vendor disappears from the site.
 
 **Hard remove** — delete the JSON and logo files entirely.
 
-Both trigger the sync on merge.
+Both trigger the sync on merge. Both are transparent — the change is visible in Git history.
 
 ---
 
-## Local development
+## 💻 Local development
 
 ```bash
 npm install

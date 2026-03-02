@@ -1,37 +1,39 @@
-# Get listed as a Bitaxe seller
+# 🛒 Vendor Guide
 
-Mining got centralized. Bitaxe is one piece of bringing it back to individuals.
+### Get listed as a trusted Bitaxe hardware seller.
 
-For that to work, vendors need to be trustworthy. Not because we say so — because miners depend on it. A vendor who sells counterfeits or disappears when there's a problem undermines the whole effort. A vendor who's honest, active in the community, and supports solo miners strengthens it.
+Mining got centralized. Bitaxe is one piece of bringing it back to individuals. For that to work, the hardware needs to be genuine — and the people selling it need to be accountable.
 
-This list isn't gatekeeping. It's identifying vendors who share the mission.
+This list isn't a barrier. It's a signal. A vendor on this list has been reviewed by the community and cleared by the core team. That means something to miners making a purchase decision.
 
 ---
 
-## Who belongs here
+## ✅ Who belongs here
 
 You're a good fit if:
 
 - You sell **genuine Bitaxe hardware** — not clones, not unverified boards sold as Bitaxe
-- Your shop is **live and real** — real products, real prices, real orders going out the door
-- You have **some presence in the community** — Discord, X, forums, anywhere people can find you and vouch for you
+- Your shop is **live and active** — real products, real stock, real orders going out the door
+- You have **some presence in the community** — Discord, X, forums, anywhere people can find and vouch for you
 - You have **no open reports** of fraud or counterfeits in the community
 
-New to the community? That's okay — but expect the review to take longer while people get to know you.
+New to the community? That's fine — but expect the review to take longer while people get to know you.
 
 ---
 
-## How to submit
+## 📋 How to submit
 
 ### 1. Fork this repo
 
-Hit **Fork** at the top right.
+Hit **Fork** at the top right of this page.
 
 ### 2. Add your two files
 
 **`vendors/{your-slug}.json`**
 
-The slug is your unique identifier. Lowercase letters and hyphens only — e.g. `pivotal-mining`.
+The slug is your unique identifier — lowercase letters and hyphens only. Example: `pivotal-mining`.
+
+Copy `vendors/_example.json` and fill it in:
 
 ```json
 {
@@ -59,33 +61,31 @@ Square format. PNG, JPG, or WEBP. Max **200 KB**.
 
 ### 3. Open a pull request
 
-PR title: `Add vendor: Your Shop Name`
+Title your PR: `Add vendor: Your Shop Name`
 
 Fill in the PR template. The more context you give, the faster the review.
 
 ---
 
-## What happens next
+## 🔍 What happens next
 
-1. **CI runs** — checks your JSON against the schema, validates the logo, confirms the slug matches the filename. Fix anything it flags.
-2. **Community weighs in** — anyone in the Bitaxe/OSMU community can comment, ask questions, or vouch for you. This is the point. The review is open.
-3. **Team decides** — Skot, Wantclue, Derek or another core contributor merges or closes the PR, usually with a short explanation.
+1. **CI validates your files** — checks JSON schema, logo size, slug match. Fix anything it flags before the review starts.
+2. **Community weighs in** — anyone in the Bitaxe/OSMU community can comment, ask questions, or vouch for you. This is the point. The review is public.
+3. **Core team decides** — Skot, Wantclue, Derek or another core contributor merges or closes the PR, usually with a short explanation.
 
-If your PR gets closed, re-apply once the issues raised are resolved.
-
----
-
-## Keeping your listing current
-
-Update your info — website, logo, description, socials — by opening a new PR with the changes.
-
-To remove yourself: set `"active": false` in your JSON, or delete your files entirely. Either way triggers the sync and removes you from the site.
+If your PR gets closed, fix the issues raised and re-apply.
 
 ---
 
-## Getting removed
+## 🔄 Keeping your listing current
 
-The team can remove a listing if:
+Update your info — website, logo, description, socials — by opening a new PR with the changes. Same process, same review.
+
+---
+
+## ❌ Getting removed
+
+A listing can be removed if:
 
 - You're no longer selling genuine Bitaxe hardware
 - Confirmed reports of fraud or counterfeits emerge
@@ -95,6 +95,6 @@ Removals go through the same PR process — transparent, on the record, visible 
 
 ---
 
-## Questions
+## 💬 Questions?
 
 Jump into the [OSMU Discord](https://discord.gg/osmu) and ask in the Bitaxe channels.
