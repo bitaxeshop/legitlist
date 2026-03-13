@@ -6,6 +6,9 @@ on:
     paths:
       - "vendors/**"
       - "logos/**"
+      - "scripts/sync-to-framer.mjs"
+      - "package.json"
+      - "package-lock.json"
   workflow_dispatch:
 
 permissions:

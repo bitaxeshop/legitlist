@@ -153,6 +153,33 @@ If your PR is closed, you can fix the issues and open a new one.
 
 ---
 
+## 🧯 Common errors (quick fixes)
+
+If your PR check fails, use this checklist:
+
+- **Invalid vendor filename**
+  Your file must be in `vendors/` and end with `.json`
+  Example: `your-shop-name.json`
+
+- **Slug does not match filename**
+  `slug` must be exactly the filename without `.json`
+  Example: file `pivotal-mining.json` -> `"slug": "pivotal-mining"`
+
+- **Logo filename does not match slug**
+  Your logo must use the same name as your slug
+  Example: `pivotal-mining.png`
+
+- **Logo not found**
+  Upload the logo file in the `logos/` folder
+
+- **Logo exceeds 200 KB**
+  Compress the image and upload it again
+
+- **Website/social link error**
+  Use full HTTPS URLs (starting with `https://`)
+
+---
+
 ## 🔄 Keeping your listing current
 
 Update your info — website, logo, description, socials — by opening a new PR with the changes. Same process, same review.
