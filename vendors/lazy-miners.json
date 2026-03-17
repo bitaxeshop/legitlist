@@ -1,0 +1,15 @@
+{
+  "name": "Lazy Miners",
+  "slug": "lazy-miners",
+  "website": "https://lazyminers.com",
+  "region": "North America",
+  "country": "Canada",
+  "logo": "your-shop-name.png",
+  "description": "Tell miners who you are — what you sell, where you ship, how long you've been at it. Keep it under 280 characters.",
+  "active": true,
+  "social": {
+    "x": "https://x.com/yourhandle",
+    "instagram": "",
+    "youtube": ""
+  }
+}
